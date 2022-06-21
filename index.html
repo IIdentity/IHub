@@ -1,169 +1,265 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Identity Hub</title>
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="Identity Scripting Services">
+    <meta property="og:description" content="ISU is a free obfuscator bot for lua scripts!">
+    <meta property="og:image" content="https://cdn.discordapp.com/avatars/968989077368107039/65c01c18cade0888f7c4b17658654b59.png?size=4096">
+    <meta name="theme-color" content="#264A8B">
+    <title>Isu</title>
+    <style data-tippy-stylesheet="">.tippy-box[data-animation=fade][data-state=hidden]{opacity:0}[data-tippy-root]{max-width:calc(100vw - 10px)}.tippy-box{position:relative;background-color:#333;color:#fff;border-radius:4px;font-size:14px;line-height:1.4;white-space:normal;outline:0;transition-property:transform,visibility,opacity}.tippy-box[data-placement^=top]>.tippy-arrow{bottom:0}.tippy-box[data-placement^=top]>.tippy-arrow:before{bottom:-7px;left:0;border-width:8px 8px 0;border-top-color:initial;transform-origin:center top}.tippy-box[data-placement^=bottom]>.tippy-arrow{top:0}.tippy-box[data-placement^=bottom]>.tippy-arrow:before{top:-7px;left:0;border-width:0 8px 8px;border-bottom-color:initial;transform-origin:center bottom}.tippy-box[data-placement^=left]>.tippy-arrow{right:0}.tippy-box[data-placement^=left]>.tippy-arrow:before{border-width:8px 0 8px 8px;border-left-color:initial;right:-7px;transform-origin:center left}.tippy-box[data-placement^=right]>.tippy-arrow{left:0}.tippy-box[data-placement^=right]>.tippy-arrow:before{left:-7px;border-width:8px 8px 8px 0;border-right-color:initial;transform-origin:center right}.tippy-box[data-inertia][data-state=visible]{transition-timing-function:cubic-bezier(.54,1.5,.38,1.11)}.tippy-arrow{width:16px;height:16px;color:#333}.tippy-arrow:before{content:"";position:absolute;border-color:transparent;border-style:solid}.tippy-content{position:relative;padding:5px 9px;z-index:1}</style><link rel="icon" href="https://raw.githubusercontent.com/IIdentity/IAssets/main/uhhmmmm%20fav%20logooo.png">
+    <link rel="stylesheet" href="assets/css/bulma.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
-        <meta charset = "utf-8">
-		<link rel = "shortcut icon" type = "image/x-icon" href="Logo.png" />
+    <script src="assets/js/jquery-3.6.0.js"></script>
+  </head>
+  <body data-aos-easing="ease" data-aos-duration="700" data-aos-delay="0">
+    <!-- Back To Top Start -->
+    <a id="backtotop" data-tippy-content="Back To Top." class="show">
+      <i class="fa-solid fa-angle-up has-text-white fa-2xl mt-5"></i>
+    </a>
+    <!-- Back To Top End -->
 
-		<meta name = "author" content = "Identity#1111" />
-		<meta name = "description" content = "Identity" />
-		<meta name = "keywords" content = "Identity, IdentityHub, IdentityHub, script, lua, krnl" />
+    <!-- Navbar Start -->
+    <nav class="navbar is-fixed-top nav-w" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand mt-2 mb-2">
+        <a class="navbar-item nav-dark" href="#">
+          <strong>Isu</strong>
 
-		<meta property = "og:title" content = "Identity Hub" />
-		<meta property = "og:description" content = "Identity's Roblox Scripting Services." />
-		<meta property = "og:type" content = "website" />
-		<meta property = "og:url" content = "https://identityhub.fun" />
-		<meta property = "og:secure_url" content = "https://identityhub.fun">
-		<meta property = "og:image" content = "https://identityhub.fun/Logo.png" />
+          <!-- or if you want to use image -->
+         <!--  <img
+            src="image link or path"
+            width="112"
+            height="28"
+          /> -->
+        </a>
 
-        <style>
+        <a role="button" class="navbar-burger has-text-dark" data-target="navMenu" aria-label="menu" aria-expanded="false">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
 
-            .disclaimer {
-                display: none;
-            }
-            body {
-				background-color: rgb(25, 25, 25);
-                color: white;
-                font-family: "Trebuchet MS";
-                background-image: url(Background.png);
-				background-attachment: fixed;
-				background-size: cover;
-				background-repeat: no-repeat;
-			}
+      <div id="navbarBasicExample" class="navbar-menu nav-w">
+        <div class="navbar-start">
+          <a href="#" class="navbar-item is-tab nav-dark">
+            Home
+          </a>
 
-            body::-webkit-scrollbar {
-                width: 12px;
-            }
-      
-            body::-webkit-scrollbar-thumb {
-                background-color: rgb(80, 80, 80);
-            }
+          <a href="#features" class="navbar-item is-tab nav-dark">
+            Features
+          </a>
 
-            #owlImage {
-                margin-top: 20px;
-                height: 90px;
-            }
+        </div>
 
-            #scriptBtn {
-                color: rgb(255, 255, 255);
-                background-color: rgb(45, 45, 45);
-                margin-top: 45px;
-                border: 0px;
-                border-radius: 5px;
-                cursor: pointer;
-                width: 650px;
-                height: 35px;
-            }
+        <div class="navbar-end">
+          <a href="https://discord.gg/ATptCQbcQp" class="navbar-item is-tab nav-dark" target="_blank">
+            <i class="fa-brands fa-discord"></i>
+          </a>
 
-            #copyPopup {
-                color: rgb(0, 0, 0);
-                background-color: rgb(255, 255, 255);
-                font-family: monospace;
-                border: 0px;
-                border-radius: 4px;
-                text-align: center;
-                position: absolute;
-                display: none;
-                width: 150px;
-                height: 35px;
-            }
 
-            #gamesBtn {
-                background-color: rgb(45, 45, 45); 
-                color: rgb(255, 255, 255); 
-                font-size: large; 
-                border: 0px; 
-                border-radius: 2px;
-                cursor: pointer; 
-                width: 100px; 
-                height: 50px;
-            }
+          <div class="navbar-item nav-dark">
+            <div class="buttons">
 
-            #discordBtn {
-                background-color: rgb(60, 125, 168); 
-                color: rgb(255, 255, 255); 
-                font-size: large; 
-                border: 0px; 
-                border-radius: 2px;
-                cursor: pointer; 
-                width: 100px; 
-                height: 50px;
-            }
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar End -->
 
-            #gamesBtn {
-                background-color: rgb(60, 125, 168); 
-                color: rgb(255, 255, 255); 
-                font-size: large; 
-                border: 0px; 
-                border-radius: 2px;
-                cursor: pointer; 
-                width: 100px; 
-                height: 50px;
-            }
+    <!-- Hero Section Start -->
+    <section class="hero bg-base is-fullheight">
+      <div class="hero-body">
+        <div class="">
+          <div class="columns">
+            <div class="column mr-6 mt-12 aos-init aos-animate" data-aos="fade-up">
+              <p class="title has-text-white has-text-weight-bold">
+               ISU
+              </p>
+              <p class="subtitle has-text-grey-light is-size-10 mt-3">
+                ISU is a Free, Fast, Simple and Secure Obfuscation Service.
+                Join our server to start using!
+              </p>
+              <div class="buttons">
+                <a href="#features" class="button is-info">
+                  <strong>Features</strong>
+                </a>
 
-            #detailLine {
-                margin-top: 45px;
-                border: 1px solid rgb(60, 125, 168);
-                width: 500px;
-                height: 0px;
-            }
+              </div>
+            </div>
+            <div class="column mt-6 aos-init aos-animate" data-aos="fade-left">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="has-text-centered" data-tippy-content="Scroll Down">
+        <a href="#features"><i class="fa-solid fa-circle-chevron-down fa-lg vert-move2 has-text-white"></i></a>
+      </div>
+    </section>
+    <!-- Hero Section End -->
 
-            #copyBtn:hover {
-                background-color: rgb(70, 70, 70);
-            }
-        </style>
-    </head>
-    <body>
-        <input type="text" value="Copied script." readonly id="copyPopup">
-        <center>
-            <br>
-            <h1>Identity's Website</h1>
-            <div id="detailLine"></div>
-            <br>
-            <h1 style="font-family: monospace;">What is Identity Hub?</h1>
-            <i style="color: rgb(180, 180, 180);"><span style="color: rgb(66, 135, 245);">Identity</span> <span style="color: rgb(255, 255, 255);">Hub</span> is a <span style="color: rgb(66, 135, 245);">free / paid</span> Roblox script hub developed by <span style="color: rgb(255, 255, 255);">Identity#1111</span> and <span style="color: rgb(255, 255, 255);">! Firox#9999</span>.<br>It currently has 2 games. It is made to be executed on Roblox exploits.</i>
-            <div id="detailLine"></div>
-            <br>
-<h1 style="font-family: monospace;">Script</h1>
-<button id="scriptBtn"><span style="color: rgb(66, 135, 245);">loadstring</span>(game:<span style="color: rgb(78, 153, 204);">HttpGet</span>(<span style="color: rgb(80, 179, 179);">"</span><span style="color: rgb(149, 199, 144);">https://identityproject.000webhostapp.com/Loader/Main.lua</span><span style="color: rgb(80, 179, 179);">"</span>))();</button>
-<br>
-<div id="detailLine"></div>
-            <h1 style="font-family: monospace;">Exploits Supported</h1>
-            <i style="color: rgb(180, 180, 180);"><a href="https://x.synapse.to/" target = "_blank" style="color: rgb(180, 180, 180);">Synapse X</a><br><br><a href="https://painexist.gg" target = "_blank" style="color: rgb(180, 180, 180);">Sentinel</a><br><br><a href="https://www.asshurthosting.pw/" target = "_blank" style="color: rgb(180, 180, 180);">Sirhurt</a><br><br><a href="https://krnl.ca" target = "_blank" style="color: rgb(180, 180, 180);">Krnl</a></i>
-            <div id="detailLine"></div>
-            <br>
-            <h1 style="font-family: monospace;">Discord</h1>
-            <button id="discordBtn">Join</button>
-            <div id="detailLine"></div>
-            <br>
-            <h1 style="font-family: monospace;">Games</h1>
-            <button id="gamesBtn">Games</button>
-            <br>
-            <br>
-            <br>
-        </center>
+    <!-- Hero Waves Start -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path fill="#264A8B" fill-opacity="1" d="M0,288L24,261.3C48,235,96,181,144,154.7C192,128,240,128,288,149.3C336,171,384,213,432,202.7C480,192,528,128,576,133.3C624,139,672,213,720,213.3C768,213,816,139,864,101.3C912,64,960,64,1008,106.7C1056,149,1104,235,1152,240C1200,245,1248,171,1296,144C1344,117,1392,139,1416,149.3L1440,160L1440,0L1416,0C1392,0,1344,0,1296,0C1248,0,1200,0,1152,0C1104,0,1056,0,1008,0C960,0,912,0,864,0C816,0,768,0,720,0C672,0,624,0,576,0C528,0,480,0,432,0C384,0,336,0,288,0C240,0,192,0,144,0C96,0,48,0,24,0L0,0Z"></path>
+    </svg>
+    <!-- Hero Waves End -->
 
-        <script type="text/javascript">
-            const scriptBtn = document.getElementById("scriptBtn");
-            const copyPopup = document.getElementById("copyPopup");
-            const discordBtn = document.getElementById("discordBtn");
-            const gamesBtn = document.getElementById("gamesBtn");
+    <!-- Features Section Start -->
+    <section id="features" class="section mt-6">
+      <div class="has-text-centered">
+        <h1 class="title lined">Features</h1>
+        <div class="line line-center blurple"></div>
+      </div>
 
-            scriptBtn.addEventListener("click", () => {
-                const scriptBox = document.createElement("textarea");
-                scriptBox.value = 'loadstring(game:HttpGet("https://identityproject.000webhostapp.com/Loader/Main.lua"))();';
-                document.body.appendChild(scriptBox);
-                scriptBox.select();
-                document.execCommand("copy");
-                document.body.removeChild(scriptBox);
-                copyPopup.style.display = "block";
-                setTimeout(() => {copyPopup.style.display = "none";}, 2500);
-            });
+      <!-- single feature start (Left) -->
+      <div class="single-feature">
+        <div class="shape-right aos-init aos-animate" data-aos="fade-up-left">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#264A8B" d="M42.7,-62.9C50.9,-52.8,50.1,-34.4,51.7,-19.2C53.4,-4,57.4,8,56.6,20.8C55.8,33.7,50.1,47.4,39.9,53.8C29.6,60.1,14.8,59.1,0.4,58.5C-14,58,-28,57.9,-38,51.5C-48.1,45,-54.3,32.3,-61.3,18.1C-68.4,4,-76.4,-11.7,-71.9,-22.7C-67.4,-33.6,-50.4,-39.8,-36.3,-47.9C-22.2,-56.1,-11.1,-66.3,3.1,-70.5C17.2,-74.7,34.5,-72.9,42.7,-62.9Z" transform="translate(100 100)"></path>
+          </svg>
+        </div>
 
-            gamesBtn.addEventListener("click", () => {
-                window.open("./pages/games.html");
-            });
-        </script>
-    </body>
-</html>
+        <div class="columns mt-6">
+          <div class="column mr-6">
+            <h4 class="title">Max Security </h4>
+            <p class="subtitle mt-3">
+              Stopping Attempts At Cracking Your Script.
+            </p>
+          </div>
+          <div class="column aos-init aos-animate" data-aos="fade-left">
+            <img class="image has-image-centered" src="https://img.icons8.com/fluency/452/cyber-security.png" alt="feature1 img" style="width: 20rem;">
+          </div>
+        </div>
+      </div>
+      <!-- single feature end (Left) -->
+
+      <!-- single feature start (Right) -->
+      <div class="single-feature">
+        <div class="shape-left aos-init aos-animate" data-aos="fade-up-right">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#264A8B" d="M54.2,-67.2C69.4,-63.5,80.4,-46.6,84.6,-28.7C88.7,-10.8,86,8.1,76.8,21.4C67.6,34.7,51.9,42.3,38.1,50.3C24.2,58.3,12.1,66.7,-2.8,70.5C-17.7,74.3,-35.3,73.6,-45.6,64.5C-55.9,55.3,-58.8,37.7,-63.3,21.2C-67.7,4.7,-73.7,-10.6,-71.8,-25.4C-69.8,-40.2,-59.9,-54.5,-46.6,-58.9C-33.3,-63.2,-16.7,-57.6,1.4,-59.6C19.5,-61.5,39,-71,54.2,-67.2Z" transform="translate(100 100)"></path>
+          </svg>
+        </div>
+
+        <div class="columns mt-6">
+          <div class="column aos-init aos-animate" data-aos="fade-right">
+            <img class="image has-image-centered" src="https://img.icons8.com/fluency/452/cosmetic-brush.png" alt="feature1 img" style="width: 20rem;">
+          </div>
+          <div class="column">
+            <h4 class="title">
+              Anti Tamper 
+            </h4>
+            <p class="subtitle mt-3">
+              Making your code very hard to beautify.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- single feature end (Right) -->
+
+      <!-- single feature start (Left) -->
+      <div class="single-feature">
+        <div class="shape-right aos-init aos-animate" data-aos="fade-up-left">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#264A8B" d="M42.7,-62.9C50.9,-52.8,50.1,-34.4,51.7,-19.2C53.4,-4,57.4,8,56.6,20.8C55.8,33.7,50.1,47.4,39.9,53.8C29.6,60.1,14.8,59.1,0.4,58.5C-14,58,-28,57.9,-38,51.5C-48.1,45,-54.3,32.3,-61.3,18.1C-68.4,4,-76.4,-11.7,-71.9,-22.7C-67.4,-33.6,-50.4,-39.8,-36.3,-47.9C-22.2,-56.1,-11.1,-66.3,3.1,-70.5C17.2,-74.7,34.5,-72.9,42.7,-62.9Z" transform="translate(100 100)"></path>
+          </svg>
+        </div>
+
+        <div class="columns mt-6">
+          <div class="column mr-6">
+            <h4 class="title">
+              Anti Dump 
+            </h4>
+            <p class="subtitle mt-3">
+              Stopping All Dumpers From Constant Dumping Your Scripts.
+            </p>
+          </div>
+          <div class="column aos-init aos-animate" data-aos="fade-left">
+            <img class="image has-image-centered" src="https://img.icons8.com/fluency/452/document.png" alt="feature1 img" style="width: 20rem;">
+          </div>
+        </div>
+      </div>
+      <!-- single feature end (Left) -->
+
+      <!-- single feature start (Right) -->
+      <div class="single-feature">
+        <div class="shape-left aos-init aos-animate" data-aos="fade-up-right">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#264A8B" d="M54.2,-67.2C69.4,-63.5,80.4,-46.6,84.6,-28.7C88.7,-10.8,86,8.1,76.8,21.4C67.6,34.7,51.9,42.3,38.1,50.3C24.2,58.3,12.1,66.7,-2.8,70.5C-17.7,74.3,-35.3,73.6,-45.6,64.5C-55.9,55.3,-58.8,37.7,-63.3,21.2C-67.7,4.7,-73.7,-10.6,-71.8,-25.4C-69.8,-40.2,-59.9,-54.5,-46.6,-58.9C-33.3,-63.2,-16.7,-57.6,1.4,-59.6C19.5,-61.5,39,-71,54.2,-67.2Z" transform="translate(100 100)"></path>
+          </svg>
+        </div>
+
+        <div class="columns mt-6">
+          <div class="column aos-init aos-animate" data-aos="fade-right">
+            <img class="image has-image-centered" src="https://img.icons8.com/fluency/452/lock.png" alt="feature1 img" style="width: 20rem;">
+          </div>
+          <div class="column">
+            <h4 class="title">String Encryption </h4>
+            <p class="subtitle mt-3">
+              Encrypts Strings With A Custom Bytecode & Vm Protection.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- single feature end (Right) -->
+    </section>
+    <!-- Features Section End -->
+
+
+
+    <!-- Invite Section Start -->
+    <section class="section mt-6">
+      <div class="columns">
+        <div class="column has-text-left">
+          <p class="title has-text-weight-bold">
+            Ready to try <span class="blurple">ISU</span>?
+          </p>
+          <p class="subtitle mt-3 has-text-gray">
+            
+          </p>
+          <a href="https://discord.gg/ATptCQbcQp" class="button is-blurple is-medium"><strong><i class="fa-solid fa-book"></i> Get Started</strong></a>
+        </div>
+
+        <div class="column"></div>
+      </div>
+    </section>
+    <!-- Invite Section End -->
+
+    <!-- Footer Section Start -->
+    <footer class="footer bg-base">
+      <div class="content has-text-centered has-text-white">
+        <div class="mb-2">
+          <a href="https://discord.gg/ATptCQbcQp" class="has-text-white" target="_blank">
+            <i class="fa-brands fa-discord"></i>
+          </a>
+          &nbsp; &nbsp;
+          <a href="https://github.com/IIdentity" class="has-text-white" target="_blank">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
+
+        <p>
+          <span class="has-text-weight-bold">Identity Scripting Utilities</span>
+          <br>
+          Copyright © Isu <span id="cp-year">2022</span> 
+        </p>
+
+        <p style="letter-spacing: 0.1em;" class="is-uppercase">
+          Website Designed By Identity
+        </p>
+      </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script src="assets/js/script.js"></script>
+  
+
+</body></html>
